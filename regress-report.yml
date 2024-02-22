@@ -1,81 +1,82 @@
 ---
-- summary: |
-    Не работает перход на главную страницу при нажатии на кнопку "Hexlet Store".
-  status: pass
+test-cases:
+  - summary: |
+      Не работает перход на главную страницу при нажатии на кнопку "Hexlet Store".
+    status: pass
 
-- summary: |
-    Не работает перевод описания товаров на главной странице при переходе на русский язык.
-  status: fail
+  - summary: |
+      Не работает перевод описания товаров на главной странице при переходе на русский язык.
+    status: fail
 
-- summary: |
-    При переключении на русский язык описание карточек товара остается на английском.
-  status: fail
+  - summary: |
+      При переключении на русский язык описание карточек товара остается на английском.
+    status: fail
 
-- summary: |
-    Ошибка при оформлении заказа.
-  status: fail
+  - summary: |
+      Ошибка при оформлении заказа.
+    status: fail
 
-- summary: |
-    Функция фильтрации по ценовому диапазону некорректно обрабатывает отрицательные значения.
-  status: fail
+  - summary: |
+      Функция фильтрации по ценовому диапазону некорректно обрабатывает отрицательные значения.
+    status: fail
 
-- summary: |
-    Проверка отображения товаров в зависимости от их статуса (в наличии/нет в наличии).
-  status: fail
+  - summary: |
+      Проверка отображения товаров в зависимости от их статуса (в наличии/нет в наличии).
+    status: fail
 
-- summary: |
-    Нет адаптивной мобильного версии сайта
-  status: fail
-  
-  bugreports:
-    - summary: |
-        Не работает функция поиска по ключевому слову
-      environment: |
-        Google Chrome	121.0.6167.185 (Official Build) (64-bit)
-        ОС Windows 10
-      steps-to-reproduce: |
-        1. Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-        2. В строке Search ввести "Apple"
-      expected-result: |
-        Отображенные на странице карточек в котором содержатся "Apple"
-      actual-result: |
-        Сайт отображает все товары
+  - summary: |
+      Нет адаптивной мобильного версии сайта
+    status: fail
+    
+    bugreports:
+      - summary: |
+          Не работает функция поиска по ключевому слову
+        environment: |
+          Google Chrome	121.0.6167.185 (Official Build) (64-bit)
+          ОС Windows 10
+        steps-to-reproduce: |
+          1. Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+          2. В строке Search ввести "Apple"
+        expected-result: |
+          Отображенные на странице карточек в котором содержатся "Apple"
+        actual-result: |
+          Сайт отображает все товары
 
-    - summary: |
-        Не работает функция сортировки товара по ценовому диапазону
-      environment: |
-        Google Chrome	121.0.6167.185 (Official Build) (64-bit)
-        ОС Windows 10
-      steps-to-reproduce: |
-        1. Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-        2. В поле "От" написать 10 и в поле "До" ввести 100
-      expected-result: |
-        При поиске по заданным параметрам сайт показывает все товары, которые им соответствуют. Если же товаров, соответствующих заданным параметрам, не найдено, пользователь видит сообщение "Ничего не найдено!"
-      actual-result: |
-        Сайт отображает все товары
+      - summary: |
+          Не работает функция сортировки товара по ценовому диапазону
+        environment: |
+          Google Chrome	121.0.6167.185 (Official Build) (64-bit)
+          ОС Windows 10
+        steps-to-reproduce: |
+          1. Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+          2. В поле "От" написать 10 и в поле "До" ввести 100
+        expected-result: |
+          При поиске по заданным параметрам сайт показывает все товары, которые им соответствуют. Если же товаров, соответствующих заданным параметрам, не найдено, пользователь видит сообщение "Ничего не найдено!"
+        actual-result: |
+          Сайт отображает все товары
 
-    - summary: |
-        При совместной фильтрации по категориям и брендам наблюдаются ошибки.
-      environment: |
-        Google Chrome	121.0.6167.185 (Official Build) (64-bit)
-        ОС Windows 10
-      steps-to-reproduce: |
-        1. Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-        2. Выбрать категорию "laptops"
-        3. Поставить флажок "Huawei"
-      expected-result: |
-        На странице отображается надпись "Ничего не найдено!", так как по заданным критериям поиска товары не найдены.
-      actual-result: |
-        Сайт отображает все товары
+      - summary: |
+          При совместной фильтрации по категориям и брендам наблюдаются ошибки.
+        environment: |
+          Google Chrome	121.0.6167.185 (Official Build) (64-bit)
+          ОС Windows 10
+        steps-to-reproduce: |
+          1. Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+          2. Выбрать категорию "laptops"
+          3. Поставить флажок "Huawei"
+        expected-result: |
+          На странице отображается надпись "Ничего не найдено!", так как по заданным критериям поиска товары не найдены.
+        actual-result: |
+          Сайт отображает все товары
 
-    - summary: |
-        В мобильной версии отсутствуют фильтры
-      environment: |
-        Safari Browser
-        Iphone SE
-      steps-to-reproduce: |
-        Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      expected-result: |
-        На сайте присутствуют фильтры
-      actual-result: |
-        На сайте отсутствуют фильтры
+      - summary: |
+          В мобильной версии отсутствуют фильтры
+        environment: |
+          Safari Browser
+          Iphone SE
+        steps-to-reproduce: |
+          Открыть главную страницу страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+        expected-result: |
+          На сайте присутствуют фильтры
+        actual-result: |
+          На сайте отсутствуют фильтры
